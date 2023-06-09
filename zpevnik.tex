@@ -5,7 +5,6 @@
 
 
 %<head>
-        
 	\fontfam[Termes]
         \typosize[20/22]
         \margins/1 a4 (2,2,1.5,2)cm % rozmery stranky
@@ -15,7 +14,7 @@
         \load[vlna] % nezalomi predlozky
 	\parindent=0pt
 
-\def\Dotsfill{\dotfill\break\smallskip}
+\def\Dotsfill{\dotfill\break} %varianta k Linefill
 \def\Linefill{\leaders\hrule height1pt depth0pt \hfil\break}
 
 \def\titlefont{\bf\thefontsize[30]}	
@@ -23,10 +22,11 @@
 %</head>
 %<body>
 
-\nadpis {Letní tábor \uv{Na Kocandě}}
-\nadpis {30.7. -- 12.8.2023, Skočice}
+\nadpis{Letní tábor \uv{Na Kocandě}}
+\nadpis{30.7. -- 12.8.2023, Skočice}
 
-{\baselineskip=50pt Jméno:\Linefill
+{\baselineskip=50pt 
+Jméno:\Linefill
 Příjmení:\Linefill
 Přezdívka:\Linefill
 Název družiny:\Linefill
@@ -34,14 +34,19 @@ Barva:\Linefill
 Jméno instruktora:\Linefill
 Jméno vedoucího:\Linefill
 Ve stanu s:\Linefill
-z:\Linefill\par}
+{\parindent=3.65em \indent z:\Linefill}\par}
 
+\vfill
+\centerline{\hbox to 0.5\hsize{\leaders\hrule height1pt depth0pt \hfill}}
+\centerline{hlavní vedoucí, v.r.}
+\vfill\break
 
+\nadpis{Obsah}
+Tady jednoho dne (snad) bude obsah :)
+\vfill\break
 
-
-
-
-
+\nadpis{Morseova abeceda}
+Tady bude morseovka
 
 
 
