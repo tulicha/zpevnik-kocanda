@@ -5,23 +5,47 @@
 
 
 %<head>
-        \load[mte]
-        \enablemte
-
-        \fontfam[lm]
-        \typosize[10/12]
-        \margins/2 (100,200) (2,2,1.5,2)cm % rozmery stranky
-        \parindent=25pt % odsazeni prvni radky
-        \ttindent=\parindent
+        
+	\fontfam[Termes]
+        \typosize[20/22]
+        \margins/1 a4 (2,2,1.5,2)cm % rozmery stranky
 
         \cslang % deleni slov
         \csquotes % uvozovky
         \load[vlna] % nezalomi predlozky
+	\parindent=0pt
 
+\def\Dotsfill{\dotfill\break\smallskip}
+\def\Linefill{\leaders\hrule height1pt depth0pt \hfil\break}
 
-        \hyperlinks \Green \Blue % odkazy
-        \nopagenumbers % bez cislovani
+\def\titlefont{\bf\thefontsize[30]}	
+\def\nadpis#1{\centerline{\titlefont #1}\bigskip}
 %</head>
 %<body>
-\tit NADPÍSEK
+
+\nadpis {Letní tábor \uv{Na Kocandě}}
+\nadpis {30.7. -- 12.8.2023, Skočice}
+
+{\baselineskip=50pt Jméno:\Linefill
+Příjmení:\Linefill
+Přezdívka:\Linefill
+Název družiny:\Linefill
+Barva:\Linefill
+Jméno instruktora:\Linefill
+Jméno vedoucího:\Linefill
+Ve stanu s:\Linefill
+z:\Linefill\par}
+
+
+
+
+
+
+
+
+
+
+
+
+\message{Meum est propositum in taberna mori!}
 \bye
