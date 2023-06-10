@@ -6,7 +6,7 @@
 
 %<head>
 	\fontfam[Termes]
-        \typosize[20/22]
+        \typosize[24/26]
         \margins/1 a4 (2,2,1.5,2)cm % rozmery stranky
 
         \cslang % deleni slov
@@ -14,8 +14,12 @@
         \load[vlna] % nezalomi predlozky
 	\parindent=0pt
 
+
 \def\Dotsfill{\dotfill\break} %varianta k Linefill
-\def\Linefill{\leaders\hrule height1pt depth0pt \hfil\break}
+\def\Linefill{\leaders\hrule height1pt depth0pt \hfill\break}
+
+\def\T{{\thefontsize[16]\bullet\,}}
+\def\P{{\bf{--}\,}}
 
 \def\titlefont{\bf\thefontsize[30]}	
 \def\nadpis#1{\centerline{\titlefont #1}\bigskip}
@@ -46,8 +50,31 @@ Tady jednoho dne (snad) bude obsah :)
 \vfill\break
 
 \nadpis{Morseova abeceda}
-Tady bude morseovka
-$\bullet$\bf{--}
+	 
+
+{\hskip-1cm\tabskip=-20pt\table{c c l c c l}{
+        A  & \T\P     & Akát           & S & \T\T\T   & Sekyra      \cr
+        B  & \P\T\T\T & Blýskavice     & T & \P       & Trám        \cr 
+	C  & \P\T\P\T & Cílovníci      & U & \T\T\P   & Učený       \cr 	
+	D  & \P\T\T   & Dálava         & V & \T\T\T\P & Vyučený     \cr
+	E  & \T       & Erb            & W & \T\P\P   & Wagón klád  \cr
+	F  & \T\T\P\T & Filipíny       & X & \P\T\T\P & Xénokratés  \cr
+	G  & \P\P\T   & Grónská zem    & Y & \P\T\P\P & Ýgar mává   \cr
+	H  & \T\T\T\T & Hrachovina     & Z & \P\P\T\T & Zrádná žena \cr
+	Ch & \P\P\P\P & Chléb nám dává &   &        &               \cr
+	I  & \T\T     & Ibis           & 1 & \T\P\P\P\P & \cr
+	J  & \T\P\P\P & Jasmín bílý    & 2 & \T\T\P\P\P & \cr 
+	K  & \P\T\P   & Krákorá	       & 3 & \T\T\T\P\P & \cr
+	L  & \T\P\T\T & Lupíneček      & 4 & \T\T\T\T\P & \cr
+	M  & \P\P     & Mává           & 5 & \T\T\T\T\T & \cr
+	N  & \P\T     & Nástup         & 6 & \P\T\T\T\T & \cr
+	O  & \P\P\P   & Ó náš pán      & 7 & \P\P\T\T\T & \cr
+	P  & \T\P\P\T & Papírníci      & 8 & \P\P\P\T\T & \cr
+	Q  & \P\P\T\P & Qílí orkán     & 9 & \P\P\P\P\T & \cr
+	R  & \T\P\T   & Rarášek        & 0 & \P\P\P\P\P & \cr
+}}
+
+
 
 
 \message{Meum est propositum in taberna mori!}
