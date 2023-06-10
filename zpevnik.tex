@@ -18,7 +18,7 @@
 \def\Dotsfill{\dotfill\break} %varianta k Linefill
 \def\Linefill{\leaders\hrule height1pt depth0pt \hfill\break}
 
-\def\T{{\thefontsize[16]\bullet\,}}
+\def\T{{\thefontsize[16]\,\bullet\,\,}}
 \def\P{{\bf{--}\,}}
 
 \def\titlefont{\bf\thefontsize[30]}	
@@ -52,7 +52,7 @@ Tady jednoho dne (snad) bude obsah :)
 \nadpis{Morseova abeceda}
 	 
 
-{\hskip-1cm\tabskip=-20pt\table{c c l c c l}{
+{\hskip-1cm\tabskip=-20pt\tabstrut={\vrule height18pt depth15pt width0pt}\table{c c l c c l}{
         A  & \T\P     & Akát           & S & \T\T\T   & Sekyra      \cr
         B  & \P\T\T\T & Blýskavice     & T & \P       & Trám        \cr 
 	C  & \P\T\P\T & Cílovníci      & U & \T\T\P   & Učený       \cr 	
