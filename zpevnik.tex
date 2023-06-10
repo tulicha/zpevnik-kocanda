@@ -18,8 +18,10 @@
 \def\Dotsfill{\dotfill\break} %varianta k Linefill
 \def\Linefill{\leaders\hrule height1pt depth0pt \hfill\break}
 
+\def\BigDot{{\kern3.5pt\thefontsize[25]\bullet}}
 \def\T{{\thefontsize[16]\,\bullet\,\,}}
 \def\P{{\bf{--}\,}}
+
 
 \def\titlefont{\bf\thefontsize[30]}	
 \def\nadpis#1{\centerline{\titlefont #1}\bigskip}
@@ -73,9 +75,67 @@ Tady jednoho dne (snad) bude obsah :)
 	Q  & \P\P\T\P & Qílí orkán     & 9 & \P\P\P\P\T & \cr
 	R  & \T\P\T   & Rarášek        & 0 & \P\P\P\P\P & \cr
 }}
+\vfill\break
 
+\nadpis{Šifry}
+{\setfontsize{at15pt}\currvar
+	\hbox{
+		\vbox{\hsize=0.5\hsize\centerline{Velký polský kříž}%\cskip
+			\centerline{\table{c|c|c}{
+				A B C & D E F & G H Ch \crl
+				I J K & L M N & O P Q  \crl
+				R S T & U V W & X Y Z  \cr
+			}
+		}}
+	
+		\vbox{\hsize=0.5\hsize\centerline{Základní mřížka}%\cskip
+			\centerline{\table{|c|c|c|c|c|}{\crl
+				A & B & C & D & E \crl
+				F & G & H & I & J \crl
+				K & L & M & N & O \crl
+				P & R & S & T & U \crl
+				V & W & X & Y & Z \crl
+			}
+		}}
+	}
 
+	\hbox{
+		\vbox{\hsize=0.33\hsize
+			\centerline{\table{c|c|c}{
+				A & B & C  \crl
+				D & E & F  \crl
+				G & H & Ch \cr
+	 			\mspan3[c]{} \cr	
+			}
+		}}
+		
+		\vbox{\hsize=0.33\hsize\centerline{Hebrejština}%\cskip
+			\centerline{\table{c|c|c}{
+				I & J & K \crl
+				L & M & N \crl
+				O & P & Q \cr
+	 			\mspan3[c]{\BigDot} \cr	
+			}
+		}}
+	
+		\vbox{\hsize=0.33\hsize
+			\centerline{\table{c|c|c}{
+				I & S & T \crl
+				U & V & W \crl
+				X & Y & Z \cr
+ 				\mspan3[c]{\BigDot\BigDot} \cr	
+			}
+		}}
 
+	}
+	
+		\centerline{Dvojitý kříž}%\cskip
+			\centerline{\table{c|c||c|c}{
+			A B C & D E & F G & H Ch \crl
+			I J K & L M & N O & P Q  \crl
+			R S T & U V & W X & Y Z  \cr	
+		}}
+}
 
 \message{Meum est propositum in taberna mori!}
 \bye
