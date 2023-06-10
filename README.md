@@ -1,4 +1,4 @@
 # zpevnik-kocanda
-Šablona Kocanďáckého zpěvníku v OpTeXu
+Šablona Kocanďáckého zpěvníku napsaná v OpTeXu
 
 Vytvořeno jako ročníková práce pro předmět BI-GIT
