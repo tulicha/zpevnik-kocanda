@@ -7,7 +7,7 @@
 %<head>
 	\picdir={obrazky/}
 	\fontfam[Termes]
-        \typosize[24/26]
+        \typosize[15/17]
         \margins/1 a4 (2,2,2,2)cm % rozmery stranky
 
         \cslang % deleni slov
@@ -22,13 +22,20 @@
 \def\T{{\thefontsize[16]\,\bullet\,\,}}
 \def\P{{\bf{--}\,}}
 
-\def\akord#1{\noindent\raise 20pt \hbox to 0pt{{\it #1} \hss}}
+\def\akord#1{\noindent\raise 15pt \hbox to 0pt{{\it #1} \hss}}
 
-\def\Titlefont#1{{\localcolor\bf\thefontsize[30]\Black{#1}}}
+\def\Titlefont#1{{\localcolor\bf\thefontsize[20]\Black{#1}}}
+\def\Namefont#1{{\localcolor\it\thefontsize[20]\Black{#1}}}
 \let\Color=\LightGrey
 
 \def\Title #1{
   \setbox0=\vbox{\kern2mm \hbox to\hsize{\hfil\Titlefont{#1}\hfil}\noindent}\noindent
+  {\localcolor\rlap{\Color\strut\vrule width\wd0 height\ht0}\box0}
+  \bigskip
+}
+
+\def\nazev #1#2{
+  \setbox0=\vbox{\kern2mm \hbox to\hsize{\hfil\Titlefont{#1}\hfill\Namefont{#2}\hfil}\noindent}\noindent
   {\localcolor\rlap{\Color\strut\vrule width\wd0 height\ht0}\box0}
   \bigskip
 }
@@ -199,12 +206,19 @@ Ve stanu s:\Linefill
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Název\hfill Jméno 
+\nazev{Karavana mraků}{Karel Kryl}
 
-\akord{D}Slunce je zlatou skobou \akord{Hmi}na obloze přibitý,\nl
-\akord{G}Pod sluncem \akord{A}sedlo kože\akord{D}ný.\akord{A7}\nl
-\akord{D}Pod sedlem kůň, pod koněm \akord{Hmi}moje boty rozbitý,\nl
-\akord{G}A starý \akord{A}ruce sedře\akord{D}ný.
+\hbox{
+	\setbox0=\vbox{\hsize=0.95\hsize
+	\akord{D}Slunce je zlatou skobou \akord{Hmi}na obloze přibitý,\nl
+	\akord{G}Pod sluncem \akord{A}sedlo kože\akord{D}ný.\akord{A7}\nl
+	\akord{D}Pod sedlem kůň, pod koněm \akord{Hmi}moje boty rozbitý,\nl
+	\akord{G}A starý \akord{A}ruce sedře\akord{D}ný.
+	Když sever válčil s Jihem a zem šla do války,
+	}
+	\vbox{\hsize=0.05\hsize \bf{1.}\par\kern\ht0\kern-25pt}
+	\box0
+}
 \bigskip
 
 Dopředu jít s tou karavanou mraků,\nl
