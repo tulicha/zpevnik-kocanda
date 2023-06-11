@@ -15,7 +15,6 @@
         \load[vlna] % nezalomi predlozky
 	\parindent=0pt
 
-
 \def\Dotsfill{\dotfill\break} %varianta k Linefill
 \def\Linefill{\leaders\hrule height1pt depth0pt \hfill\break}
 
@@ -23,14 +22,23 @@
 \def\T{{\thefontsize[16]\,\bullet\,\,}}
 \def\P{{\bf{--}\,}}
 
+\def\akord#1{\noindent\raise 20pt \hbox to 0pt{{\it #1} \hss}}
 
-\def\titlefont{\bf\thefontsize[30]}	
-\def\nadpis#1{\centerline{\titlefont #1}\bigskip}
+\def\Titlefont#1{{\localcolor\bf\thefontsize[30]\Black{#1}}}
+\let\Color=\LightGrey
+
+\def\Title #1{
+  \setbox0=\vbox{\kern2mm \hbox to\hsize{\hfil\Titlefont{#1}\hfil}\noindent}\noindent
+  {\localcolor\rlap{\Color\strut\vrule width\wd0 height\ht0}\box0}
+  \bigskip
+}
+
 %</head>
 %<body>
 
-\nadpis{Letní tábor \uv{Na Kocandě}}
-\nadpis{30.7. -- 12.8.2023, Skočice}
+\Title{Letní tábor \uv{Na Kocandě}}
+\kern-10mm
+\Title{30.7. -- 12.8.2023, Skočice}
 
 {\baselineskip=55pt 
 Jméno:\Linefill
@@ -48,38 +56,11 @@ Ve stanu s:\Linefill
 \centerline{hlavní vedoucí, v.r.}
 \vfill\break
 
-\nadpis{Obsah}
-Tady jednoho dne (snad) bude obsah :)
-
-\centerline{Malý polský kříž}
-\hbox{
-	\vbox{\hsize=0.25\hsize\centerline{\table{c|c|c}{
-		A & B & C \crl
-		D & E & F \crl
-		G & H & I \cr
- 		\mspan3[c]{} \cr	
-		}
-	}}
-
-	\vbox{\hsize=0.25\hsize\centerline{\table{c|c|c}{
-		J & K & L \crl
-		M & N & O \crl
-		P & Q & R \cr
- 		\mspan3[c]{\BigDot} \cr	
-		}
-	}}
-
-	\vbox{\hsize=0.25\hsize\centerline{\table{c|c}{
-		\pdfsave \pdfrotate{45}\rlap{S}\pdfrestore & U \crl
-		T & V \cr	
-		}
-	}}
-}
+\Title{Obsah}
 
 \vfill\break
 
-\nadpis{Morseova abeceda}
-	 
+\Title{Morseova abeceda}
 
 {\hskip-1cm\tabskip=-20pt\tabstrut={\vrule height18pt depth15pt width0pt}\table{c c l c c l}{
         A  & \T\P     & Akát           & S & \T\T\T   & Sekyra      \cr
@@ -104,10 +85,10 @@ Tady jednoho dne (snad) bude obsah :)
 }}
 \vfill\break
 
-\nadpis{Šifry}
+\Title{Šifry}
 {\setfontsize{at20pt}\currvar\bf
 	\hbox{
-		\vbox{\hsize=0.5\hsize\centerline{Velký polský kříž}%\cskip
+		\vbox{\hsize=0.5\hsize\centerline{Velký polský kříž}\smallskip
 			\centerline{\table{c|c|c}{
 				A B C & D E F & G H Ch \crl
 				I J K & L M N & O P Q  \crl
@@ -115,7 +96,7 @@ Tady jednoho dne (snad) bude obsah :)
 			}
 		}}
 	
-		\vbox{\hsize=0.5\hsize\centerline{Základní mřížka}%\cskip
+		\vbox{\hsize=0.5\hsize\centerline{Základní mřížka}\smallskip
 			\centerline{\table{|c|c|c|c|c|}{\crl
 				A & B & C & D & E \crl
 				F & G & H & I & J \crl
@@ -124,7 +105,48 @@ Tady jednoho dne (snad) bude obsah :)
 				V & W & X & Y & Z \crl
 			}
 		}}
-	}
+	}\medskip
+
+	\setbox0=\hbox{\table{c|c}{
+			\kern0pt\pdfsave\pdfrotate{-45}\rlap{T}\pdfrestore & \kern0pt\pdfsave\pdfrotate{-45}\rlap{S}\pdfrestore \crl
+			\kern-30pt\pdfsave\pdfrotate{-45}\rlap{V}\pdfrestore & \kern0pt\pdfsave\pdfrotate{-45}\rlap{U}\pdfrestore \cr
+			}
+		}
+
+	\setbox1=\hbox{\table{c|c}{
+			\kern-15pt\pdfsave\pdfrotate{-45}\rlap{X}\pdfrestore & \kern-15pt\pdfsave\pdfrotate{-45}\rlap{W}\pdfrestore \crl
+			Z & Y \cr	
+			}
+		}
+
+	\centerline{Malý polský kříž}\smallskip
+	\hbox{
+		\vbox{\hsize=0.25\hsize\centerline{\table{c|c|c}{
+			A & B & C \crl
+			D & E & F \crl
+			G & H & I \cr
+	 		\mspan3[c]{} \cr	
+			}
+		}}
+
+		\vbox{\hsize=0.25\hsize\centerline{\table{c|c|c}{
+			J & K & L \crl
+			M & N & O \crl
+			P & Q & R \cr
+ 			\mspan3[c]{\BigDot} \cr	
+			}
+		}}
+
+		\vbox{\hsize=0.25\hsize\par\nobreak \vskip\wd0 \vskip-\ht0
+		\centerline {\kern-10pt\pdfsave\pdfrotate{45}\rlap{\box0}\pdfrestore}
+		\nobreak\medskip
+		}
+
+		\vbox{\hsize=0.25\hsize\par\nobreak \vskip\wd0 \vskip-\ht0
+		\centerline {\kern-10pt\pdfsave\pdfrotate{45}\rlap{\box1}\pdfrestore}
+		\nobreak\medskip
+		}
+	}\medskip
 
 	\hbox{
 		\vbox{\hsize=0.33\hsize
@@ -136,12 +158,12 @@ Tady jednoho dne (snad) bude obsah :)
 			}
 		}}
 		
-		\vbox{\hsize=0.33\hsize\centerline{Hebrejština}%\cskip
+		\vbox{\hsize=0.33\hsize\centerline{Hebrejština}\smallskip
 			\centerline{\table{c|c|c}{
 				I & J & K \crl
 				L & M & N \crl
 				O & P & Q \cr
-	 			\mspan3[c]{\BigDot} \cr	
+	 			\mspan3[c]{\kern-4pt\BigDot} \cr	
 			}
 		}}
 	
@@ -150,13 +172,13 @@ Tady jednoho dne (snad) bude obsah :)
 				I & S & T \crl
 				U & V & W \crl
 				X & Y & Z \cr
- 				\mspan3[c]{\BigDot\BigDot} \cr	
+ 				\mspan3[c]{\kern-8pt\BigDot\BigDot} \cr	
 			}
 		}}
 
-	}
+	}\medskip
 	
-		\centerline{Dvojitý kříž}%\cskip
+		\centerline{Dvojitý kříž}\smallskip
 			\centerline{\table{c|c||c|c}{
 			A B C & D E & F G & H Ch \crl
 			I J K & L M & N O & P Q  \crl
@@ -175,6 +197,19 @@ Tady jednoho dne (snad) bude obsah :)
 %\picw=\hsize  \centerline{\inspic{8.png}}\vfill\break
 %\picw=\hsize  \centerline{\inspic{9.png}}\vfill\break
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\akord{D}Slunce je zlatou skobou \akord{Hmi}na obloze přibitý,\nl
+\akord{G}Pod sluncem \akord{A}sedlo kože\akord{D}ný.\akord{A7}\nl
+\akord{D}Pod sedlem kůň, pod koněm \akord{Hmi}moje boty rozbitý,\nl
+\akord{G}A starý \akord{A}ruce sedře\akord{D}ný.
+\bigskip
+
+Dopředu jít s tou karavanou mraků,\nl
+Schovat svou pleš pod stetson děravý.\nl
+Jen kousek jít, jen chvíli do soumraku,\nl
+Až tam, kde svítí město, město bělavý,
 
 \message{Meum est propositum in taberna mori!}
 \bye
