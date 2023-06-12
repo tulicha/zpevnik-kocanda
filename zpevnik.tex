@@ -2,8 +2,6 @@
 % Email: slavion7@fit.cvut.cz                   %
 % This document is only compatabile with OpTeX! %
 \useOpTeX
-
-
 %<head>
 	\picdir={obrazky/}
 	\fontfam[Termes]
@@ -14,6 +12,29 @@
         \csquotes % uvozovky
         \load[vlna] % nezalomi predlozky
 	\parindent=0pt
+
+\newread\testin
+\def\softinput #1 {\let\next=\relax \openin\testin=#1
+\ifeof\testin \message{Warning: the file #1 does not exist}%
+\else \closein\testin \def\next{\input #1 }\fi
+\next}
+
+\newbox\obsahbox
+\newwrite\tocfile
+\def\udaj#1#2{\line{#1 \dotfill\ #2}} % příprava ke čtení souboru
+\setbox\obsahbox = \vbox {\softinput \jobname.toc } % uložení dat do boxu
+%\softinput \jobname.toc % načtení pracovního souboru a vytvoření obsahu	
+
+\def\nazev #1#2{
+	\write\tocfile{\string\udaj{#1}{\the\pageno}}	
+	\setbox0=\vbox{\kern2mm \hbox to\hsize{\kern2pt\Titlefont{#1}\hfill\Namefont{#2}\kern2pt}\noindent}\noindent
+	{\localcolor\rlap{\Color\strut\vrule width\wd0 height\ht0}\box0}
+	\bigskip
+}
+
+\immediate\openout\tocfile = \jobname.toc % otevření souboru k zápisu
+
+
 
 \def\Dotsfill{\dotfill\break} %varianta k Linefill
 \def\Linefill{\leaders\hrule height1pt depth0pt \hfill\break}
@@ -30,12 +51,6 @@
 
 \def\Title #1{
 	\setbox0=\vbox{\kern2mm \hbox to\hsize{\hfil\Titlefont{#1}\hfil}\noindent}\noindent
-	{\localcolor\rlap{\Color\strut\vrule width\wd0 height\ht0}\box0}
-	\bigskip
-}
-
-\def\nazev #1#2{
-	\setbox0=\vbox{\kern2mm \hbox to\hsize{\kern2pt\Titlefont{#1}\hfill\Namefont{#2}\kern2pt}\noindent}\noindent
 	{\localcolor\rlap{\Color\strut\vrule width\wd0 height\ht0}\box0}
 	\bigskip
 }
@@ -74,7 +89,6 @@
 \def\konec{{\vfill\break}}
 
 
-
 %</head>
 %<body>
 
@@ -99,7 +113,7 @@ Ve stanu s:\Linefill
 \vfill\break
 
 \Title{Obsah}
-
+\unvbox\obsahbox
 \vfill\break
 
 \Title{Morseova abeceda}
