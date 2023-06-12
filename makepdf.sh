@@ -1,6 +1,5 @@
 #!/bin/bash
 # Make sure this script has right to write, read and execute!
-
 echo "Making pdf..."
 echo "----------------------"
 ls pisnicky > seznam.tex
