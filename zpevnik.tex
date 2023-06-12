@@ -1,97 +1,7 @@
 % Author: Ondřej Slavík                         %
 % Email: slavion7@fit.cvut.cz                   %
 % This document is only compatabile with OpTeX! %
-\useOpTeX
-%<head>
-	\picdir={obrazky/}
-	\fontfam[Termes]
-        \typosize[22/24]
-        \margins/1 a4 (2,2,2,2)cm % rozmery stranky
-
-        \cslang % deleni slov
-        \csquotes % uvozovky
-        \load[vlna] % nezalomi predlozky
-	\parindent=0pt
-
-%deklarace softinput
-\newread\testin
-\def\softinput #1 {\let\next=\relax \openin\testin=#1
-\ifeof\testin \message{Warning: the file #1 does not exist}%
-\else \closein\testin \def\next{\input #1 }\fi
-\next}
-
-\newbox\obsahbox
-\newwrite\tocfile
-\def\udaj#1#2#3{\line{\typosize[17/19]{\bf{#1}}/{\it{#2}} \dotfill #3}} % příprava ke čtení souboru
-\setbox\obsahbox = \vbox {\softinput \jobname.toc } % uložení dat do boxu
-
-\def\nazev #1#2{
-	\write\tocfile{\string\udaj{#1}{#2}{\the\pageno}}	
-	\setbox0=\vbox{\kern2mm \hbox to\hsize{\kern2pt\Titlesongfont{#1}\hfill\Namefont{#2}\kern2pt}\noindent}\noindent
-	{\localcolor\rlap{\Color\strut\vrule width\wd0 height\ht0}\box0}
-	\smallskip
-}
-
-\immediate\openout\tocfile = \jobname.toc % otevření souboru k zápisu
-
-
-
-\def\Dotsfill{\dotfill\break} %varianta k Linefill
-\def\Linefill{\leaders\hrule height1pt depth0pt \hfill\break}
-
-\def\BigDot{{\kern3.5pt\thefontsize[25]\bullet}}
-\def\T{{\thefontsize[16]\,\bullet\,\,}}
-\def\P{{\bf{--}\,}}
-
-\def\akord#1{\noindent\raise 15pt \hbox to 0pt{{\bf #1} \hss}}
-
-\def\Titlefont#1{{\localcolor\bf\thefontsize[30]\Black{#1}}}
-\def\Titlesongfont#1{{\localcolor\bf\thefontsize[25]\Black{#1}}}
-\def\Namefont#1{{\localcolor\it\thefontsize[20]\Black{#1}}}
-\let\Color=\LightGrey
-
-\def\Title #1{
-	\setbox0=\vbox{\kern2mm \hbox to\hsize{\hfil\Titlefont{#1}\hfil}\noindent}\noindent
-	{\localcolor\rlap{\Color\strut\vrule width\wd0 height\ht0}\box0}
-	\bigskip
-}
-
-\def\n{{\nl}}
-\def\slokaA #1#2{\typosize[15/17]
-	\hbox{
-		\setbox0=\vbox{\hsize=0.95\hsize
-			{#2}
-		}
-		\vbox{\typosize[16/18]\hsize=0.05\hsize \bf{#1}\par\kern\ht0\kern-26pt}
-		\box0
-	}
-	\medskip
-}
-
-\def\slokaB #1#2{
-	\hbox{\typosize[15/17]
-		\setbox0=\vbox{\hsize=0.95\hsize
-			{#2}
-		}
-		\vbox{\typosize[16/18]\hsize=0.05\hsize \kern5pt\bf{#1}\par\kern\ht0\kern-11pt}
-		\box0
-	}
-	\medskip
-}
-\def\konec{{\vfill\break}}
-
-\def\slokaO #1{
-	\hbox{\typosize[15/17]
-		\kern4pt\vbox{\typosize[16/18]\hsize=\hsize \bf{#1}}
-	}
-	\medskip
-}
-
-\def\konec{{\vfill\break}}
-
-
-%</head>
-%<body>
+\input makra.tex
 
 \Title{Letní tábor \uv{Na Kocandě}}
 \kern-10mm
@@ -126,7 +36,7 @@ Ve stanu s:\Linefill
 	D  & \P\T\T   & Dálava         & V & \T\T\T\P & Vyučený     \cr
 	E  & \T       & Erb            & W & \T\P\P   & Wagón klád  \cr
 	F  & \T\T\P\T & Filipíny       & X & \P\T\T\P & Xénokratés  \cr
-	G  & \P\P\T   & Grónská zem    & Y & \P\T\P\P & Ýgar mává   \cr
+	G  & \P\P\T   & Grónská zem    & Y & \P\T\P\P & Ý se ztrácí   \cr
 	H  & \T\T\T\T & Hrachovina     & Z & \P\P\T\T & Zrádná žena \cr
 	Ch & \P\P\P\P & Chléb nám dává &   &        &               \cr
 	I  & \T\T     & Ibis           & 1 & \T\P\P\P\P & \cr
