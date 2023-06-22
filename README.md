@@ -1,7 +1,7 @@
 # zpevnik-kocanda
 Šablona Kocanďáckého zpěvníku napsaná v OpTeXu
 
-Vytvořeno jako ročníková práce pro předmět BI-GIT
+Vytvořeno jako ročníková práce pro předmět BI-TEX
 
 ## Použití:
 1. Ve složce "pisnicky" se připraví písničky, které autor chce ve zpěvníku
