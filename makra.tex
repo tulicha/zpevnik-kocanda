@@ -32,6 +32,15 @@
 \def\T{{\thefontsize[16]\,\bullet\,\,}}
 \def\P{{\bf{--}\,}}
 
+%Malý polský kříž
+\def\anglecross{\raise.7ex\hbox{%
+   \pdfliteral{q .6 w -15 -15 m 15 15 l S -15 15 m 15 -15 l S Q}}}
+\def\polishcross#1#2#3#4{\vbox{\halign{\hfil##\hfil\cr
+   #1\cr
+   \hbox to3em{\rlap{#2}\hss\anglecross\hss\llap{#3}}\cr
+   #4\cr
+}}}
+
 %Definice fontů
 \def\Titlefont#1{{\localcolor\bf\thefontsize[30]\Black{#1}}}
 \def\Titlesongfont#1{{\localcolor\bf\thefontsize[25]\Black{#1}}}

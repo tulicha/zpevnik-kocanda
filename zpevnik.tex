@@ -74,18 +74,6 @@ Ve stanu s:\Linefill
 		}}
 	}\medskip
 
-	\setbox0=\hbox{\table{c|c}{
-			\kern0pt\pdfsave\pdfrotate{-45}\rlap{T}\pdfrestore & \kern0pt\pdfsave\pdfrotate{-45}\rlap{S}\pdfrestore \crl
-			\kern-30pt\pdfsave\pdfrotate{-45}\rlap{V}\pdfrestore & \kern0pt\pdfsave\pdfrotate{-45}\rlap{U}\pdfrestore \cr
-			}
-		}
-
-	\setbox1=\hbox{\table{c|c}{
-			\kern-15pt\pdfsave\pdfrotate{-45}\rlap{X}\pdfrestore & \kern-15pt\pdfsave\pdfrotate{-45}\rlap{W}\pdfrestore \crl
-			Z & Y \cr	
-			}
-		}
-
 	\centerline{Malý polský kříž}\smallskip
 	\hbox{
 		\vbox{\hsize=0.25\hsize\centerline{\table{c|c|c}{
@@ -103,17 +91,17 @@ Ve stanu s:\Linefill
  			\mspan3[c]{\BigDot} \cr	
 			}
 		}}
-
-		\vbox{\hsize=0.25\hsize \rotbox{45}{\box0}}
-		%\vbox{\hsize=0.25\hsize\par\nobreak \vskip\wd0 \vskip-\ht0
-		%\centerline {\kern-10pt\pdfsave\pdfrotate{45}\rlap{\box0}\pdfrestore}
-		%\nobreak\medskip
-		%}
-
-		\vbox{\hsize=0.25\hsize\par\nobreak \vskip\wd0 \vskip-\ht0
-		\centerline {\kern-10pt\pdfsave\pdfrotate{45}\rlap{\box1}\pdfrestore}
-		\nobreak\medskip
+		
+		\vbox{\hsize=0.25\hsize\centerline{
+			\polishcross STUV}
+			\centerline{}
 		}
+		\vbox{\hsize=0.25\hsize\centerline{
+			\polishcross WXYZ}
+			\centerline{\BigDot}
+		}
+	
+
 	}\medskip
 
 	\hbox{
